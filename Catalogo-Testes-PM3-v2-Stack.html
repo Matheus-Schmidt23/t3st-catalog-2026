@@ -83,6 +83,12 @@ img{max-width:100%; display:block;}
 }
 .section-dark .kicker{color:var(--yellow);}
 
+/* ---------- status dot legend: green = confirmada, red = refutada, yellow = inconclusiva/em andamento ---------- */
+.status-dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:2px; flex-shrink:0;}
+.status-dot.is-confirmed{background:#4ADE80;}
+.status-dot.is-refuted{background:#FF6B6B;}
+.status-dot.is-inconclusive{background:#FFD43B;}
+
 .phase-band{
   display:inline-flex; align-items:center; gap:10px; padding:7px 8px 7px 16px; border-radius:6px; margin-bottom:22px;
   font-family:'Roboto',sans-serif; font-weight:700; font-size:12.5px; text-transform:uppercase; letter-spacing:.06em;
@@ -279,8 +285,8 @@ body.edit-unlocked .edit-lock-bar #editLockToggle:hover{background:#176E36;}
     <h1 style="font-size:clamp(34px,5vw,58px); font-weight:900; color:#fff; letter-spacing:-.01em; max-width:820px; line-height:1.02;">Stack</h1>
     <p style="font-family:'Roboto',sans-serif; font-size:clamp(16px,2vw,20px); color:rgba(255,255,255,.65); margin-top:14px; max-width:640px;">Regras, hipóteses e resultados dos testes de marketing da marca Stack.</p>
     <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:44px;">
-      <a href="#teste01" style="font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;">Teste 01 - Pricing: estamos cobrando muito caro? ↓</a>
-      <a href="#teste02" style="font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;">Teste 02 · Brand Message: Comunidade ou Curso? ↓</a>
+      <a href="#teste01" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-refuted"></span>Teste 01 - Pricing: estamos cobrando muito caro? ↓</a>
+      <a href="#teste02" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-inconclusive"></span>Teste 02 · Brand Message: Comunidade ou Curso? ↓</a>
       <a href="#proximos-passos" style="font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#000; text-decoration:none; background:var(--yellow); padding:10px 20px; border-radius:6px;">Próximos passos ↓</a>
     </div>
   </div>
