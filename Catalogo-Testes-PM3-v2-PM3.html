@@ -498,7 +498,7 @@ body.edit-unlocked .edit-lock-bar #editLockToggle:hover{background:#176E36;}
   var LEAF_TAGS = ['H1','H2','H3','H4','P','TD','TH','LI','B','STRONG','SPAN'];
 
   document.querySelectorAll('.section').forEach(function(sec, i){
-    if (!sec.dataset.uid) sec.dataset.uid = 'sec' + i + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+    if (!sec.dataset.uid) sec.dataset.uid = sec.id ? 'sec_' + sec.id : 'sec' + i;
   });
 
   function hasText(el){ return (el.textContent||'').replace(/\s+/g,'').length > 0; }

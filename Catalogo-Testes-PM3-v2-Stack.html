@@ -286,6 +286,7 @@ body.edit-unlocked .edit-lock-bar #editLockToggle:hover{background:#176E36;}
     <p style="font-family:'Roboto',sans-serif; font-size:clamp(16px,2vw,20px); color:rgba(255,255,255,.65); margin-top:14px; max-width:640px;">Regras, hipóteses e resultados dos testes de marketing da marca Stack.</p>
     <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:44px;">
       <a href="#teste01" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-refuted"></span>Teste 01 - Pricing: estamos cobrando muito caro? ↓</a>
+      <a href="#teste01-1" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-confirmed"></span>Teste 1.1 - Pricing parcelado: o viés instrumental vende? ↓</a>
       <a href="#teste02" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-inconclusive"></span>Teste 02 · Brand Message: Comunidade ou Curso? ↓</a>
       <a href="#proximos-passos" style="font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#000; text-decoration:none; background:var(--yellow); padding:10px 20px; border-radius:6px;">Próximos passos ↓</a>
     </div>
@@ -456,6 +457,67 @@ body.edit-unlocked .edit-lock-bar #editLockToggle:hover{background:#176E36;}
   </details>
 </section>
 
+<section class="section has-fold" id="teste01-1">
+  <div class="test-fold">
+    <div class="fold-card">
+      <div class="phase-band"><span class="n">1.1</span><span class="dot"></span>Teste 1.1 · Pricing parcelado · Stack</div>
+
+      <div class="fold-step is-hip">
+        <span class="step-lbl is-hip">Hipótese — o que acreditávamos</span>
+        <p class="step-txt">A mensagem instrumental continua não vendendo cursos da Stack, mesmo com o preço parcelado — e esse viés pode ser abandonado.</p>
+      </div>
+
+      <div class="fold-step is-test">
+        <span class="step-lbl is-test">Teste — como colocamos à prova</span>
+        <p class="step-txt">Novo anúncio de caráter instrumental com o preço parcelado (ad1_stack_cursos), rodando de 05/10 a 15/10 em tráfego pago.</p>
+        <div class="arm-row">
+          <span class="arm-chip">Mensagem instrumental</span>
+          <span class="arm-chip">Preço parcelado</span>
+          <span class="arm-chip">05/10 a 15/10</span>
+        </div>
+      </div>
+
+      <div class="fold-step is-res">
+        <span class="step-lbl is-res">✓ Resultado — confirmada</span>
+        <p class="step-txt">Nenhuma venda de curso da Stack: as 3 compras vieram de outros produtos — 2 ingressos da PCamp (R$ 1.394 cada) e 1 assinatura PM3 Sprints (R$ 990). Diferente dos testes anteriores, o anúncio não deu prejuízo, com receita de R$ 3.778 para cerca de R$ 1.894 investidos, mas o viés instrumental segue sem converter em cursos da Stack.</p>
+        <div class="result-row">
+          <div class="result-tile is-attn"><span class="rt-letter">Cursos Stack</span><span class="rt-name">vendidos</span><span class="rt-num">0</span><span class="rt-lbl">Vendas</span></div>
+          <div class="result-tile"><span class="rt-letter">Compras</span><span class="rt-name">no site</span><span class="rt-num">3</span><span class="rt-lbl">Outros produtos</span></div>
+          <div class="result-tile"><span class="rt-letter">Custo</span><span class="rt-name">por compra</span><span class="rt-num">R$ 631,38</span><span class="rt-lbl">CPA</span></div>
+          <div class="result-tile"><span class="rt-letter">CPC</span><span class="rt-name">313 cliques</span><span class="rt-num">R$ 6,05</span><span class="rt-lbl">CTR 0,36%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <details class="test-details">
+    <summary>Ver evidências, análise e próximos passos</summary>
+    <div class="section-inner">
+    <div class="meta-row">
+      <div class="meta-chip"><span>Anúncio</span><b>ad1_stack_cursos</b></div>
+      <div class="meta-chip"><span>Período</span><b>05/10 a 15/10</b></div>
+      <div class="meta-chip"><span>Alcance</span><b>9.799 contas</b></div>
+      <div class="meta-chip"><span>Frequência</span><b>8,94</b></div>
+    </div>
+
+    <h4 style="font-size:14px; margin:24px 0 14px; font-family:'Roboto',sans-serif; font-weight:700; color:#8A8496; text-transform:uppercase; letter-spacing:.06em;">O que foi vendido</h4>
+    <div class="table-wrap" style="margin-bottom:24px;">
+      <table>
+        <thead>
+          <tr><th style="padding:12px 18px;">Produto</th><th style="padding:12px 18px;">Qtd.</th><th style="padding:12px 18px;">Valor unitário</th></tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:11px 18px;">Ingresso PCamp</td><td style="padding:11px 18px;">2</td><td style="padding:11px 18px;">R$ 1.394</td></tr>
+          <tr><td style="padding:11px 18px;">Assinatura PM3 Sprints</td><td style="padding:11px 18px;">1</td><td style="padding:11px 18px;">R$ 990</td></tr>
+          <tr><td style="padding:11px 18px;">Cursos da Stack</td><td style="padding:11px 18px;">0</td><td style="padding:11px 18px;">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px; color:#9891A3;">Fonte: Meta Ads Manager · receita e investimento estimados a partir de 3 compras × R$ 631,38 e dos valores informados.</p>
+    </div>
+  </details>
+</section>
+
 <section class="section has-fold" id="teste02">
   <div class="test-fold">
     <div class="fold-card">
@@ -533,8 +595,13 @@ body.edit-unlocked .edit-lock-bar #editLockToggle:hover{background:#176E36;}
     <h1 style="font-size:clamp(30px,4.2vw,48px); font-weight:900; color:#fff; letter-spacing:-.02em; margin-bottom:36px;">Próximos passos sugeridos</h1>
 
     <div>
-      <h3 style="font-family:'Roboto',sans-serif; font-weight:800; font-size:clamp(18px,2vw,22px); color:#fff; margin-bottom:8px;">01. Refazer o teste de Brand Messaging usando social media</h3>
-      <p style="font-size:15px; color:rgba(255,255,255,.8); max-width:760px; line-height:1.55; margin-bottom:18px;">Testar Carreira vs. Comunidade em uma audiência maior no Social Media, mantendo oferta, público e investimento equivalentes.</p>
+      <h3 style="font-family:'Roboto',sans-serif; font-weight:800; font-size:clamp(18px,2vw,22px); color:#fff; margin-bottom:8px;">(05/10 a 15/10) Teste de Pricing (1.1)</h3>
+      <p style="font-size:15px; color:rgba(255,255,255,.8); max-width:760px; line-height:1.55;">Realizar novo teste com caráter instrumental com o preço parcelado, para confirmar se de fato esse viés pode ser abandonado.</p>
+    </div>
+
+    <div style="margin-top:32px;">
+      <h3 style="font-family:'Roboto',sans-serif; font-weight:800; font-size:clamp(18px,2vw,22px); color:#fff; margin-bottom:8px;">(19/10 a 29/10) Teste de Posição (2.1)</h3>
+      <p style="font-size:15px; color:rgba(255,255,255,.8); max-width:760px; line-height:1.55; margin-bottom:18px;">Aplicar novamente o teste realizado por IS mas em um público maior, via paid media, para verificar se a posição de comunidade é realmente pouco efetiva.</p>
       <div class="mini-box-grid" style="grid-template-columns:repeat(2,1fr); margin-top:0;">
         <div class="mini-box">
           <div class="ttl">Variação A · Carreira</div>
@@ -548,8 +615,8 @@ body.edit-unlocked .edit-lock-bar #editLockToggle:hover{background:#176E36;}
     </div>
 
     <div style="margin-top:32px;">
-      <h3 style="font-family:'Roboto',sans-serif; font-weight:800; font-size:clamp(18px,2vw,22px); color:#fff; margin-bottom:8px;">02. Nova rodada via Inside Sales</h3>
-      <p style="font-size:15px; color:rgba(255,255,255,.8); max-width:760px; line-height:1.55;">Realizar uma nova rodada com uma base maior e mensagens mais curtas, focadas inicialmente em gerar resposta e iniciar a conversa, antes de apresentar a oferta.</p>
+      <h3 style="font-family:'Roboto',sans-serif; font-weight:800; font-size:clamp(18px,2vw,22px); color:#fff; margin-bottom:8px;">(data a definir) Investigação Quali em IS</h3>
+      <p style="font-size:15px; color:rgba(255,255,255,.8); max-width:760px; line-height:1.55;">Investigação Quali em IS para determinar os motivos de compra e não-compra. Continuidade da investigação iniciada por IS e Marketing sobre os motivos de compra da Stack.</p>
     </div>
   </div>
 </section>
@@ -599,7 +666,7 @@ body.edit-unlocked .edit-lock-bar #editLockToggle:hover{background:#176E36;}
   var LEAF_TAGS = ['H1','H2','H3','H4','P','TD','TH','LI','B','STRONG','SPAN'];
 
   document.querySelectorAll('.section').forEach(function(sec, i){
-    if (!sec.dataset.uid) sec.dataset.uid = 'sec' + i + '_' + Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+    if (!sec.dataset.uid) sec.dataset.uid = sec.id ? 'sec_' + sec.id : 'sec' + i;
   });
 
   function hasText(el){ return (el.textContent||'').replace(/\s+/g,'').length > 0; }
