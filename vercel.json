@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/Catalogo-Testes-PM3-v2-PM3.html" },
+    { "source": "/pm3", "destination": "/Catalogo-Testes-PM3-v2-PM3.html" },
+    { "source": "/stack", "destination": "/Catalogo-Testes-PM3-v2-Stack.html" }
+  ]
+}
