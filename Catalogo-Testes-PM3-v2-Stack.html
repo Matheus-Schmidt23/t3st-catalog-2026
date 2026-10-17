@@ -167,6 +167,29 @@ img{max-width:100%; display:block;}
 .fc-status.is-confirmed{background:#1F8A45; color:#fff;}
 .fc-status.is-inconclusive{background:#FFB12A; color:#000;}
 .fc-hero + .fold-step{border-top:none;}
+.thesis-group{max-width:1500px; margin:0 auto; padding:44px 4vw 12px;}
+.thesis-group + .thesis-group{border-top:1px solid var(--card-border); margin-top:20px;}
+.thesis-head{display:inline-flex; font-family:'Inter Tight',sans-serif; font-weight:800; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#452E78; background:#DACBF6; border-radius:99px; padding:9px 18px; margin-bottom:20px;}
+.thesis-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch;}
+.thesis-grid > .section{padding:0; border-bottom:none; display:flex; flex-direction:column; overflow:visible; background:transparent;}
+.thesis-grid .test-fold{padding:0 0 12px; min-height:0; flex:1; align-items:stretch;}
+.thesis-grid .fold-card{max-width:none; display:flex; flex-direction:column;}
+.thesis-grid .fold-learn{margin-top:auto;}
+.thesis-grid .fc-num{font-size:clamp(56px,6vw,88px);}
+.thesis-grid .fc-title{font-size:clamp(20px,2.2vw,30px);}
+.thesis-grid .fold-step,.thesis-grid .fc-hero{padding-left:32px; padding-right:32px;}
+.thesis-grid .fold-learn{padding-left:32px; padding-right:32px;}
+.thesis-grid .fold-learn::before{left:28px;}
+.thesis-grid .test-details{padding:0 0 24px; border-top:none;}
+.fold-card.is-planned{border:2px dashed #B9B5C1; box-shadow:none;}
+.fc-status.is-planned{background:rgba(255,255,255,.16); color:#fff; border:1.5px dashed rgba(255,255,255,.65);}
+.step-lbl.is-res.is-pending{background:var(--gray-fog-soft); color:#5B5468;}
+.fold-card.is-planned .fold-step.is-res .step-txt{color:#6B647A; font-weight:500;}
+@media (max-width:1000px){
+  .thesis-grid{grid-template-columns:1fr;}
+  .thesis-grid .fold-step,.thesis-grid .fc-hero,.thesis-grid .fold-learn{padding-left:22px; padding-right:22px;}
+  .thesis-grid .fold-learn::before{left:18px;}
+}
 
 .fold-step{padding:24px 44px;}
 .step-lbl{font-family:'Inter Tight',sans-serif; gap:9px; padding:5px 14px 5px 6px;}
@@ -223,6 +246,9 @@ img{max-width:100%; display:block;}
 .j-bar i{display:block; height:100%; width:60%; background:var(--yellow); border-right:2px solid #0A0A0A;}
 .j-progress span{font-family:'Roboto',sans-serif; font-weight:700; font-size:12.5px; color:#0A0A0A; white-space:nowrap;}
 
+.j-groups{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:14px;}
+.j-group{grid-column:span 2; text-align:center; font-family:'Inter Tight',sans-serif; font-weight:800; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#452E78; background:#DACBF6; border-radius:99px; padding:8px 10px;}
+.jc-t{display:none;}
 .j-nodes{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; position:relative; margin-bottom:28px;}
 .j-nodes::before{content:''; position:absolute; top:21px; left:10%; right:10%; height:3px; background:repeating-linear-gradient(90deg,var(--gray-fog) 0 6px,transparent 6px 12px);}
 .j-nodes::after{content:''; position:absolute; top:21px; left:10%; width:40%; height:3px; background:#0A0A0A;}
@@ -255,6 +281,8 @@ a.j-node:hover .j-name{text-decoration:underline;}
   .journey-kpis{grid-template-columns:repeat(2,1fr);}
   .j-nodes{grid-template-columns:1fr; gap:18px; padding-left:8px;}
   .j-nodes::before,.j-nodes::after{display:none;}
+  .j-groups{display:none;}
+  .jc-t{display:inline;}
   .j-node{flex-direction:row; align-items:flex-start; text-align:left; gap:14px;}
   .j-dot{flex-shrink:0;}
   .j-text{align-items:flex-start;}
@@ -433,8 +461,8 @@ html.is-locked .login-gate{display:flex;}
     <p style="font-family:'Roboto',sans-serif; font-size:clamp(16px,2vw,20px); color:rgba(255,255,255,.65); margin-top:14px; max-width:640px;">Regras, hipóteses e resultados dos testes de marketing da marca Stack.</p>
     <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:44px;">
       <a href="#teste01" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-refuted"></span>Teste 01 - Pricing: estamos cobrando muito caro? ↓</a>
-      <a href="#teste02" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-inconclusive"></span>Teste 02 · Brand Message: Comunidade ou Curso? ↓</a>
       <a href="#teste01-1" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-confirmed"></span>Teste 1.1 - Pricing parcelado: o viés instrumental vende? ↓</a>
+      <a href="#teste02" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-inconclusive"></span>Teste 02 · Brand Message: Comunidade ou Curso? ↓</a>
       <a href="#proximos-passos" style="font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#000; text-decoration:none; background:var(--yellow); padding:10px 20px; border-radius:6px;">Próximos passos ↓</a>
     </div>
   </div>
@@ -443,7 +471,7 @@ html.is-locked .login-gate{display:flex;}
 <section class="section" id="jornada">
   <div class="section-inner">
     <div class="phase-band"><span class="n">★</span><span class="dot"></span>Jornada de testes · Stack</div>
-    <h2 class="section-title">Cada ciclo elimina uma dúvida e aponta o próximo passo</h2>
+    <h2 class="section-title">Cada teste elimina uma dúvida e aponta o próximo passo</h2>
     <p class="section-sub">Três testes concluídos, duas hipóteses respondidas e o primeiro anúncio no positivo. Clique em uma etapa para ver o detalhe.</p>
 
     <div class="journey-kpis">
@@ -455,12 +483,13 @@ html.is-locked .login-gate{display:flex;}
 
     <div class="j-progress"><div class="j-bar"><i></i></div><span>3 de 5 etapas concluídas</span></div>
 
+    <div class="j-groups"><div class="j-group">Tese 1 · O preço é a barreira?</div><div class="j-group">Tese 2 · Comunidade como posição</div></div>
     <div class="j-nodes">
-      <a class="j-node is-refuted" href="#teste01"><span class="j-dot">✕</span><span class="j-text"><span class="j-cycle">Ciclo 1 · Ago</span><span class="j-name">Teste 01 · Pricing</span><span class="j-learn">Preço não é a barreira de compra</span></span></a>
-      <a class="j-node is-inconclusive" href="#teste02"><span class="j-dot">◐</span><span class="j-text"><span class="j-cycle">Ciclo 1 · Set</span><span class="j-name">Teste 02 · Brand Message</span><span class="j-date">01 a 10/09</span><span class="j-learn">Precisa de mais volume para validar</span></span></a>
-      <a class="j-node is-confirmed" href="#teste01-1"><span class="j-dot">✓</span><span class="j-text"><span class="j-cycle">Ciclo 2 · Out</span><span class="j-name">Teste 1.1 · Pricing parcelado</span><span class="j-date">05 a 15/10</span><span class="j-learn">Viés instrumental não vende, e o anúncio já se pagou</span></span></a>
-      <a class="j-node is-next" href="#proximos-passos"><span class="j-dot">→</span><span class="j-text"><span class="j-cycle">Ciclo 2 · Out</span><span class="j-name">Teste 2.1 · Posição</span><span class="j-date">19 a 29/10</span><span class="j-learn">Comunidade funciona em escala?</span></span></a>
-      <a class="j-node is-next" href="#proximos-passos"><span class="j-dot">…</span><span class="j-text"><span class="j-cycle">Ciclo 3</span><span class="j-name">Investigação Quali em IS</span><span class="j-date">data a definir</span><span class="j-learn">Por que compram, ou não compram, a Stack?</span></span></a>
+      <a class="j-node is-refuted" href="#teste01"><span class="j-dot">✕</span><span class="j-text"><span class="j-cycle"><span class="jc-t">Tese 1 · </span>Teste inicial</span><span class="j-name">Teste 01 · Pricing</span><span class="j-learn">Preço não é a barreira de compra</span></span></a>
+      <a class="j-node is-confirmed" href="#teste01-1"><span class="j-dot">✓</span><span class="j-text"><span class="j-cycle"><span class="jc-t">Tese 1 · </span>Reteste</span><span class="j-name">Teste 1.1 · Pricing parcelado</span><span class="j-date">05 a 15/10</span><span class="j-learn">Viés instrumental não vende, e o anúncio já se pagou</span></span></a>
+      <a class="j-node is-inconclusive" href="#teste02"><span class="j-dot">◐</span><span class="j-text"><span class="j-cycle"><span class="jc-t">Tese 2 · </span>Teste inicial</span><span class="j-name">Teste 02 · Brand Message</span><span class="j-date">01 a 10/09</span><span class="j-learn">Precisa de mais volume para validar</span></span></a>
+      <a class="j-node is-next" href="#proximos-passos"><span class="j-dot">→</span><span class="j-text"><span class="j-cycle"><span class="jc-t">Tese 2 · </span>Reteste</span><span class="j-name">Teste 2.1 · Posição</span><span class="j-date">19 a 29/10</span><span class="j-learn">Comunidade funciona em escala?</span></span></a>
+      <a class="j-node is-next" href="#proximos-passos"><span class="j-dot">…</span><span class="j-text"><span class="j-cycle">Em paralelo</span><span class="j-name">Investigação Quali em IS</span><span class="j-date">data a definir</span><span class="j-learn">Por que compram, ou não compram, a Stack?</span></span></a>
     </div>
 
     <div class="j-know">
@@ -483,11 +512,15 @@ html.is-locked .login-gate{display:flex;}
   </div>
 </section>
 
+<div class="thesis-group" id="tese1">
+<div class="thesis-head">Tese 1 · O preço é a barreira de compra?</div>
+<div class="thesis-grid">
+
 <section class="section has-fold" id="teste01">
   <div class="test-fold">
     <div class="fold-card">
       <div class="fc-hero hd-c1">
-        <div class="fc-top"><span class="fc-pill">Ciclo 1 · Ago a Set</span><span class="fc-pill is-ghost">Teste 1 de 2</span></div>
+        <div class="fc-top"><span class="fc-pill">Tese 1 · Preço</span><span class="fc-pill is-ghost">Teste inicial · 1 de 2</span></div>
         <div class="fc-main">
           <div class="fc-num">01</div>
           <div class="fc-text">
@@ -663,11 +696,95 @@ html.is-locked .login-gate{display:flex;}
   </details>
 </section>
 
-<section class="section has-fold" id="teste02">
+<section class="section has-fold" id="teste01-1">
   <div class="test-fold">
     <div class="fold-card">
       <div class="fc-hero hd-c1">
-        <div class="fc-top"><span class="fc-pill">Ciclo 1 · Ago a Set</span><span class="fc-pill is-ghost">Teste 2 de 2</span></div>
+        <div class="fc-top"><span class="fc-pill">Tese 1 · Preço</span><span class="fc-pill is-ghost">Reteste do Teste 01 · 2 de 2</span></div>
+        <div class="fc-main">
+          <div class="fc-num">1.1</div>
+          <div class="fc-text">
+            <div class="fc-kicker">Teste 1.1 · Pricing parcelado · Stack</div>
+            <h2 class="fc-title">Pricing parcelado: o viés instrumental vende?</h2>
+            <span class="fc-status is-confirmed">✓ Hipótese confirmada</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fold-step is-hip">
+        <span class="step-lbl is-hip">Hipótese — o que acreditávamos</span>
+        <p class="step-txt">A mensagem instrumental continua não vendendo cursos da Stack, mesmo com o preço parcelado — e esse viés pode ser abandonado.</p>
+      </div>
+
+      <div class="fold-step is-test">
+        <span class="step-lbl is-test">Teste — como colocamos à prova</span>
+        <p class="step-txt">Novo anúncio de caráter instrumental com o preço parcelado (ad1_stack_cursos), rodando de 05/10 a 15/10 em tráfego pago.</p>
+        <div class="arm-row">
+          <span class="arm-chip">Mensagem instrumental</span>
+          <span class="arm-chip">Preço parcelado</span>
+          <span class="arm-chip">05/10 a 15/10</span>
+        </div>
+      </div>
+
+      <div class="fold-step is-res">
+        <span class="step-lbl is-res">✓ Resultado — confirmada</span>
+        <p class="step-txt">Nenhuma venda de curso da Stack: as 3 compras vieram de outros produtos — 2 ingressos da PCamp (R$ 1.394 cada) e 1 assinatura PM3 Sprints (R$ 990). Diferente dos testes anteriores, o anúncio não deu prejuízo, com receita de R$ 3.778 para cerca de R$ 1.894 investidos, mas o viés instrumental segue sem converter em cursos da Stack.</p>
+        <div class="result-row">
+          <div class="result-tile is-attn"><span class="rt-letter">Cursos Stack</span><span class="rt-name">vendidos</span><span class="rt-num">0</span><span class="rt-lbl">Vendas</span></div>
+          <div class="result-tile"><span class="rt-letter">Compras</span><span class="rt-name">no site</span><span class="rt-num">3</span><span class="rt-lbl">Outros produtos</span></div>
+          <div class="result-tile"><span class="rt-letter">Custo</span><span class="rt-name">por compra</span><span class="rt-num">R$ 631,38</span><span class="rt-lbl">CPA</span></div>
+          <div class="result-tile"><span class="rt-letter">CPC</span><span class="rt-name">313 cliques</span><span class="rt-num">R$ 6,05</span><span class="rt-lbl">CTR 0,36%</span></div>
+        </div>
+      </div>
+
+      <div class="fold-learn">
+        <div class="learn-lbl">💡 O que aprendemos</div>
+        <p>O viés instrumental pode ser abandonado, e o público compra: este foi o primeiro anúncio sem prejuízo (ROAS ≈ 2,0).</p>
+        <div class="learn-next">Levou ao: <a href="#proximos-passos">Teste 2.1 · testar a posição de comunidade em escala (19/10 a 29/10) →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <details class="test-details">
+    <summary>Ver evidências, análise e próximos passos</summary>
+    <div class="section-inner">
+    <div class="meta-row">
+      <div class="meta-chip"><span>Anúncio</span><b>ad1_stack_cursos</b></div>
+      <div class="meta-chip"><span>Período</span><b>05/10 a 15/10</b></div>
+      <div class="meta-chip"><span>Alcance</span><b>9.799 contas</b></div>
+      <div class="meta-chip"><span>Frequência</span><b>8,94</b></div>
+    </div>
+
+    <h4 style="font-size:14px; margin:24px 0 14px; font-family:'Roboto',sans-serif; font-weight:700; color:#8A8496; text-transform:uppercase; letter-spacing:.06em;">O que foi vendido</h4>
+    <div class="table-wrap" style="margin-bottom:24px;">
+      <table>
+        <thead>
+          <tr><th style="padding:12px 18px;">Produto</th><th style="padding:12px 18px;">Qtd.</th><th style="padding:12px 18px;">Valor unitário</th></tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:11px 18px;">Ingresso PCamp</td><td style="padding:11px 18px;">2</td><td style="padding:11px 18px;">R$ 1.394</td></tr>
+          <tr><td style="padding:11px 18px;">Assinatura PM3 Sprints</td><td style="padding:11px 18px;">1</td><td style="padding:11px 18px;">R$ 990</td></tr>
+          <tr><td style="padding:11px 18px;">Cursos da Stack</td><td style="padding:11px 18px;">0</td><td style="padding:11px 18px;">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px; color:#9891A3;">Fonte: Meta Ads Manager · receita e investimento estimados a partir de 3 compras × R$ 631,38 e dos valores informados.</p>
+    </div>
+  </details>
+</section>
+
+</div>
+</div>
+
+<div class="thesis-group" id="tese2">
+<div class="thesis-head">Tese 2 · Comunidade como posição</div>
+<div class="thesis-grid">
+
+<section class="section has-fold" id="teste02">
+  <div class="test-fold">
+    <div class="fold-card">
+      <div class="fc-hero hd-c2">
+        <div class="fc-top"><span class="fc-pill">Tese 2 · Posição</span><span class="fc-pill is-ghost">Teste inicial · reteste 2.1 em 19/10</span></div>
         <div class="fc-main">
           <div class="fc-num">02</div>
           <div class="fc-text">
@@ -750,82 +867,50 @@ html.is-locked .login-gate{display:flex;}
   </details>
 </section>
 
-<section class="section has-fold" id="teste01-1">
+<section class="section has-fold" id="teste02-1">
   <div class="test-fold">
-    <div class="fold-card">
+    <div class="fold-card is-planned">
       <div class="fc-hero hd-c2">
-        <div class="fc-top"><span class="fc-pill">Ciclo 2 · Out</span><span class="fc-pill is-ghost">Reteste do Teste 01</span></div>
+        <div class="fc-top"><span class="fc-pill">Tese 2 · Posição</span><span class="fc-pill is-ghost">Reteste do Teste 02 · 2 de 2</span></div>
         <div class="fc-main">
-          <div class="fc-num">1.1</div>
+          <div class="fc-num">2.1</div>
           <div class="fc-text">
-            <div class="fc-kicker">Teste 1.1 · Pricing parcelado · Stack</div>
-            <h2 class="fc-title">Pricing parcelado: o viés instrumental vende?</h2>
-            <span class="fc-status is-confirmed">✓ Hipótese confirmada</span>
+            <div class="fc-kicker">Teste 2.1 · Posição · Stack</div>
+            <h2 class="fc-title">Posição: comunidade funciona em escala?</h2>
+            <span class="fc-status is-planned">⏳ Em preparação · 19/10 a 29/10</span>
           </div>
         </div>
       </div>
 
       <div class="fold-step is-hip">
-        <span class="step-lbl is-hip">Hipótese — o que acreditávamos</span>
-        <p class="step-txt">A mensagem instrumental continua não vendendo cursos da Stack, mesmo com o preço parcelado — e esse viés pode ser abandonado.</p>
+        <span class="step-lbl is-hip">Hipótese — o que queremos validar</span>
+        <p class="step-txt">A posição de comunidade é realmente pouco efetiva?</p>
       </div>
 
       <div class="fold-step is-test">
-        <span class="step-lbl is-test">Teste — como colocamos à prova</span>
-        <p class="step-txt">Novo anúncio de caráter instrumental com o preço parcelado (ad1_stack_cursos), rodando de 05/10 a 15/10 em tráfego pago.</p>
+        <span class="step-lbl is-test">Teste — como vamos colocar à prova</span>
+        <p class="step-txt">Repetir o teste feito por Inside Sales em um público maior, via paid media, de 19/10 a 29/10.</p>
         <div class="arm-row">
-          <span class="arm-chip">Mensagem instrumental</span>
-          <span class="arm-chip">Preço parcelado</span>
-          <span class="arm-chip">05/10 a 15/10</span>
+          <span class="arm-chip">A · Carreira</span>
+          <span class="arm-chip">B · Comunidade</span>
         </div>
       </div>
 
       <div class="fold-step is-res">
-        <span class="step-lbl is-res">✓ Resultado — confirmada</span>
-        <p class="step-txt">Nenhuma venda de curso da Stack: as 3 compras vieram de outros produtos — 2 ingressos da PCamp (R$ 1.394 cada) e 1 assinatura PM3 Sprints (R$ 990). Diferente dos testes anteriores, o anúncio não deu prejuízo, com receita de R$ 3.778 para cerca de R$ 1.894 investidos, mas o viés instrumental segue sem converter em cursos da Stack.</p>
-        <div class="result-row">
-          <div class="result-tile is-attn"><span class="rt-letter">Cursos Stack</span><span class="rt-name">vendidos</span><span class="rt-num">0</span><span class="rt-lbl">Vendas</span></div>
-          <div class="result-tile"><span class="rt-letter">Compras</span><span class="rt-name">no site</span><span class="rt-num">3</span><span class="rt-lbl">Outros produtos</span></div>
-          <div class="result-tile"><span class="rt-letter">Custo</span><span class="rt-name">por compra</span><span class="rt-num">R$ 631,38</span><span class="rt-lbl">CPA</span></div>
-          <div class="result-tile"><span class="rt-letter">CPC</span><span class="rt-name">313 cliques</span><span class="rt-num">R$ 6,05</span><span class="rt-lbl">CTR 0,36%</span></div>
-        </div>
+        <span class="step-lbl is-res is-pending">Resultado — aguardando</span>
+        <p class="step-txt">Ainda sem dados: o teste começa em 19/10.</p>
       </div>
 
       <div class="fold-learn">
-        <div class="learn-lbl">💡 O que aprendemos</div>
-        <p>O viés instrumental pode ser abandonado, e o público compra: este foi o primeiro anúncio sem prejuízo (ROAS ≈ 2,0).</p>
-        <div class="learn-next">Levou ao: <a href="#proximos-passos">Teste 2.1 · testar a posição de comunidade em escala (19/10 a 29/10) →</a></div>
+        <div class="learn-lbl">💡 O que vamos descobrir</div>
+        <p>Com volume maior, a posição de comunidade se sustenta? É a dúvida que o Teste 02 deixou aberta.</p>
       </div>
     </div>
   </div>
-
-  <details class="test-details">
-    <summary>Ver evidências, análise e próximos passos</summary>
-    <div class="section-inner">
-    <div class="meta-row">
-      <div class="meta-chip"><span>Anúncio</span><b>ad1_stack_cursos</b></div>
-      <div class="meta-chip"><span>Período</span><b>05/10 a 15/10</b></div>
-      <div class="meta-chip"><span>Alcance</span><b>9.799 contas</b></div>
-      <div class="meta-chip"><span>Frequência</span><b>8,94</b></div>
-    </div>
-
-    <h4 style="font-size:14px; margin:24px 0 14px; font-family:'Roboto',sans-serif; font-weight:700; color:#8A8496; text-transform:uppercase; letter-spacing:.06em;">O que foi vendido</h4>
-    <div class="table-wrap" style="margin-bottom:24px;">
-      <table>
-        <thead>
-          <tr><th style="padding:12px 18px;">Produto</th><th style="padding:12px 18px;">Qtd.</th><th style="padding:12px 18px;">Valor unitário</th></tr>
-        </thead>
-        <tbody>
-          <tr><td style="padding:11px 18px;">Ingresso PCamp</td><td style="padding:11px 18px;">2</td><td style="padding:11px 18px;">R$ 1.394</td></tr>
-          <tr><td style="padding:11px 18px;">Assinatura PM3 Sprints</td><td style="padding:11px 18px;">1</td><td style="padding:11px 18px;">R$ 990</td></tr>
-          <tr><td style="padding:11px 18px;">Cursos da Stack</td><td style="padding:11px 18px;">0</td><td style="padding:11px 18px;">—</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="font-size:12px; color:#9891A3;">Fonte: Meta Ads Manager · receita e investimento estimados a partir de 3 compras × R$ 631,38 e dos valores informados.</p>
-    </div>
-  </details>
 </section>
+
+</div>
+</div>
 
 <section class="section section-dark" id="proximos-passos" style="background:#000;">
   <div class="section-inner">
