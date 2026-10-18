@@ -251,13 +251,6 @@ img{max-width:100%; display:block;}
 .learn-next{margin-top:16px; padding-left:56px; font-size:12.5px; color:#B9B5C1;}
 .learn-next a{display:inline-flex; margin-top:6px; background:#FFB12A; color:#000; font-family:'Inter Tight',sans-serif; font-weight:800; font-size:12px; letter-spacing:.03em; border-radius:99px; padding:8px 16px; text-decoration:none;}
 
-.journey-kpis .jk{border:none; border-radius:24px; background:linear-gradient(135deg,#4D2B9F 0%,#6645B1 60%,#B04DDD 140%); box-shadow:0 14px 28px -14px rgba(77,43,159,.7);}
-.journey-kpis .jk .num{font-family:'Inter Tight',sans-serif; font-weight:800; font-size:clamp(36px,4.6vw,52px); letter-spacing:-.03em; color:#fff;}
-.journey-kpis .jk .lbl{color:rgba(255,255,255,.85);}
-.journey-kpis .jk.is-good{background:#FFB12A; box-shadow:0 14px 28px -14px rgba(255,177,42,.9);}
-.journey-kpis .jk.is-good .num{color:#000;}
-.journey-kpis .jk.is-good .lbl{color:rgba(0,0,0,.75);}
-.j-progress .j-bar i{background:#FFB12A;}
 
 @media (max-width:700px){
   .fc-hero{padding:22px 22px 28px;}
@@ -270,22 +263,11 @@ img{max-width:100%; display:block;}
 
 /* ---------- progression: cycle ribbon, learning band, journey overview ---------- */
 
-.journey-kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:8px 0 26px;}
-.jk{background:var(--white); border:1px solid var(--card-border); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--card-shadow);}
-.jk .num{font-family:'Roboto Condensed',sans-serif; font-weight:900; font-size:34px; line-height:1; color:var(--ink);}
-.jk .lbl{font-size:12px; color:#6B647A; margin-top:6px; line-height:1.35;}
-.jk.is-good{background:#0A0A0A;}
-.jk.is-good .num{color:var(--yellow);}
-.jk.is-good .lbl{color:rgba(255,255,255,.75);}
 
-.j-progress{display:flex; align-items:center; gap:12px; margin:0 0 22px;}
-.j-bar{flex:1; height:10px; border-radius:99px; background:var(--gray-fog-soft); overflow:hidden;}
-.j-bar i{display:block; height:100%; width:60%; background:var(--yellow); border-right:2px solid #0A0A0A;}
-.j-progress span{font-family:'Roboto',sans-serif; font-weight:700; font-size:12.5px; color:#0A0A0A; white-space:nowrap;}
 
 .j-groups{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:14px;}
 .j-group{grid-column:span 2; text-align:center; font-family:'Inter Tight',sans-serif; font-weight:800; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#452E78; background:#DACBF6; border-radius:99px; padding:8px 10px;}
-.jc-t{display:none;}
+.j-cycle{display:none;}
 .j-nodes{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; position:relative; margin-bottom:28px;}
 .j-nodes::before{content:''; position:absolute; top:21px; left:10%; right:10%; height:3px; background:repeating-linear-gradient(90deg,var(--gray-fog) 0 6px,transparent 6px 12px);}
 .j-nodes::after{content:''; position:absolute; top:21px; left:10%; width:40%; height:3px; background:#0A0A0A;}
@@ -315,11 +297,10 @@ a.j-node:hover .j-name{text-decoration:underline;}
 .j-box.is-open li::before{content:'?'; color:#B07F00;}
 
 @media (max-width:900px){
-  .journey-kpis{grid-template-columns:repeat(2,1fr);}
   .j-nodes{grid-template-columns:1fr; gap:18px; padding-left:8px;}
   .j-nodes::before,.j-nodes::after{display:none;}
   .j-groups{display:none;}
-  .jc-t{display:inline;}
+  .j-cycle{display:block;}
   .j-node{flex-direction:row; align-items:flex-start; text-align:left; gap:14px;}
   .j-dot{flex-shrink:0;}
   .j-text{align-items:flex-start;}
@@ -537,9 +518,9 @@ html.is-locked .login-gate{display:flex;}
     </details>
 
     <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:36px;">
-      <a href="#teste01" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-refuted"></span>Teste 01 - Pricing: estamos cobrando muito caro? ↓</a>
-      <a href="#teste01-1" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-confirmed"></span>Teste 1.1 - Pricing parcelado: o viés instrumental vende? ↓</a>
-      <a href="#teste02" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-inconclusive"></span>Teste 02 · Brand Message: Comunidade ou Curso? ↓</a>
+      <a href="#teste01" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-refuted"></span>Teste 1.0 - Pricing: estamos cobrando muito caro? ↓</a>
+      <a href="#teste01-1" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-confirmed"></span>Teste 1.1 - Parcelamento: o viés instrumental vende? ↓</a>
+      <a href="#teste02" style="display:inline-flex; align-items:center; gap:8px; font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#fff; text-decoration:none; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.2); padding:10px 20px; border-radius:6px;"><span class="status-dot is-inconclusive"></span>Teste 2.0 - Brand Message (IS): comunidade ou curso? ↓</a>
       <a href="#proximos-passos" style="font-family:'Roboto',sans-serif; font-weight:700; font-size:13px; color:#000; text-decoration:none; background:var(--yellow); padding:10px 20px; border-radius:6px;">Próximos passos ↓</a>
     </div>
   </div>
@@ -551,29 +532,20 @@ html.is-locked .login-gate{display:flex;}
     <h2 class="section-title">Cada teste elimina uma dúvida e aponta o próximo passo</h2>
     <p class="section-sub">Três testes concluídos, duas hipóteses respondidas e o primeiro anúncio no positivo. Clique em uma etapa para ver o detalhe.</p>
 
-    <div class="journey-kpis">
-      <div class="jk"><div class="num">3</div><div class="lbl">testes concluídos</div></div>
-      <div class="jk"><div class="num">2</div><div class="lbl">hipóteses respondidas (1 refutada, 1 confirmada)</div></div>
-      <div class="jk is-good"><div class="num">≈ 2,0x</div><div class="lbl">ROAS do Teste 1.1, o primeiro anúncio no positivo</div></div>
-      <div class="jk"><div class="num">19/10</div><div class="lbl">próximo teste: posição de comunidade (2.1)</div></div>
-    </div>
-
-    <div class="j-progress"><div class="j-bar"><i></i></div><span>3 de 5 etapas concluídas</span></div>
-
     <div class="j-groups"><div class="j-group">Tese 1 · O preço é a barreira?</div><div class="j-group">Tese 2 · Comunidade como posição</div></div>
     <div class="j-nodes">
-      <a class="j-node is-refuted" href="#teste01"><span class="j-dot">✕</span><span class="j-text"><span class="j-cycle"><span class="jc-t">Tese 1 · </span>Teste inicial</span><span class="j-name">Teste 01 · Pricing</span><span class="j-learn">Preço não é a barreira de compra</span></span></a>
-      <a class="j-node is-confirmed" href="#teste01-1"><span class="j-dot">✓</span><span class="j-text"><span class="j-cycle"><span class="jc-t">Tese 1 · </span>Reteste</span><span class="j-name">Teste 1.1 · Pricing parcelado</span><span class="j-date">05 a 15/10</span><span class="j-learn">Viés instrumental não vende, e o anúncio já se pagou</span></span></a>
-      <a class="j-node is-inconclusive" href="#teste02"><span class="j-dot">◐</span><span class="j-text"><span class="j-cycle"><span class="jc-t">Tese 2 · </span>Teste inicial</span><span class="j-name">Teste 02 · Brand Message</span><span class="j-date">01 a 10/09</span><span class="j-learn">Precisa de mais volume para validar</span></span></a>
-      <a class="j-node is-next" href="#proximos-passos"><span class="j-dot">→</span><span class="j-text"><span class="j-cycle"><span class="jc-t">Tese 2 · </span>Reteste</span><span class="j-name">Teste 2.1 · Posição</span><span class="j-date">19 a 29/10</span><span class="j-learn">Comunidade funciona em escala?</span></span></a>
-      <a class="j-node is-next" href="#proximos-passos"><span class="j-dot">…</span><span class="j-text"><span class="j-cycle">Em paralelo</span><span class="j-name">Investigação Quali em IS</span><span class="j-date">data a definir</span><span class="j-learn">Por que compram, ou não compram, a Stack?</span></span></a>
+      <a class="j-node is-refuted" href="#teste01"><span class="j-dot">✕</span><span class="j-text"><span class="j-cycle">Tese 1</span><span class="j-name">Teste 1.0 - Pricing</span><span class="j-date">14 a 24/08</span><span class="j-learn">Preço não é a barreira de compra</span></span></a>
+      <a class="j-node is-confirmed" href="#teste01-1"><span class="j-dot">✓</span><span class="j-text"><span class="j-cycle">Tese 1</span><span class="j-name">Teste 1.1 - Parcelamento</span><span class="j-date">05 a 15/10</span><span class="j-learn">Viés instrumental não vende, e o anúncio já se pagou</span></span></a>
+      <a class="j-node is-inconclusive" href="#teste02"><span class="j-dot">◐</span><span class="j-text"><span class="j-cycle">Tese 2</span><span class="j-name">Teste 2.0 - Brand Message (IS)</span><span class="j-date">01 a 10/09</span><span class="j-learn">Precisa de mais volume para validar</span></span></a>
+      <a class="j-node is-next" href="#teste02-1"><span class="j-dot">→</span><span class="j-text"><span class="j-cycle">Tese 2</span><span class="j-name">Teste 2.1 - Brand Message (Paid Media)</span><span class="j-date">19 a 29/10</span><span class="j-learn">Comunidade funciona em escala?</span></span></a>
+      <a class="j-node is-next" href="#proximos-passos"><span class="j-dot">…</span><span class="j-text"><span class="j-name">Teste 3.0 - Investigação Quali</span><span class="j-date">data a definir</span><span class="j-learn">Por que compram, ou não compram, a Stack?</span></span></a>
     </div>
 
     <div class="j-know">
       <div class="j-box is-known">
         <h4>O que já sabemos</h4>
         <ul>
-          <li>O preço não é a barreira: 0 vendas mesmo com 50% de desconto (Teste 01).</li>
+          <li>O preço não é a barreira: 0 vendas mesmo com 50% de desconto (Teste 1.0).</li>
           <li>A mensagem instrumental não vende curso da Stack, nem parcelado (Teste 1.1).</li>
           <li>O público compra: o anúncio do Teste 1.1 já se pagou, com PCamp e PM3 Sprints.</li>
         </ul>
@@ -597,11 +569,11 @@ html.is-locked .login-gate{display:flex;}
   <div class="test-fold">
     <div class="fold-card">
       <div class="fc-hero hd-c1">
-        <div class="fc-top"><span class="fc-pill">Tese 1 · Preço</span><span class="fc-pill is-ghost">Teste inicial · 1 de 2</span></div>
+        <div class="fc-top"><span class="fc-pill">Tese 1 · Preço</span><span class="fc-pill is-ghost">Teste 1.0 · 1 de 2</span></div>
         <div class="fc-main">
-          <div class="fc-num">01</div>
+          <div class="fc-num">1.0</div>
           <div class="fc-text">
-            <div class="fc-kicker">Teste 01 · A/B/C de Pricing · Stack</div>
+            <div class="fc-kicker">Teste 1.0 · A/B/C de Pricing · Stack</div>
             <h2 class="fc-title">Pricing: estamos cobrando muito caro?</h2>
             <span class="fc-status is-refuted">✕ Hipótese refutada</span>
           </div>
@@ -763,7 +735,7 @@ html.is-locked .login-gate{display:flex;}
         <div class="ttl">Próximos passos</div>
         <ul>
           <li><b>Preço não é o freio</b> — 0 vendas nas 3 faixas, mesmo com 50% de desconto; a hipótese de pricing está refutada.</li>
-          <li><b>Testar a mensagem</b> — já que reduzir o preço não gerou venda, o próximo passo é testar se o argumento (instrumental vs. comunidade) muda a intenção de compra — ver Teste 02.</li>
+          <li><b>Testar a mensagem</b> — já que reduzir o preço não gerou venda, o próximo passo é testar se o argumento (instrumental vs. comunidade) muda a intenção de compra — ver Teste 2.0.</li>
           <li><b>Revisar a lista quente</b> — CPC da lista personalizada (R$ 6,46) ficou mais caro que o público frio (R$ 3,58), o oposto do esperado.</li>
         </ul>
       </div>
@@ -777,11 +749,11 @@ html.is-locked .login-gate{display:flex;}
   <div class="test-fold">
     <div class="fold-card">
       <div class="fc-hero hd-c1">
-        <div class="fc-top"><span class="fc-pill">Tese 1 · Preço</span><span class="fc-pill is-ghost">Reteste do Teste 01 · 2 de 2</span></div>
+        <div class="fc-top"><span class="fc-pill">Tese 1 · Preço</span><span class="fc-pill is-ghost">Reteste do Teste 1.0 · 2 de 2</span></div>
         <div class="fc-main">
           <div class="fc-num">1.1</div>
           <div class="fc-text">
-            <div class="fc-kicker">Teste 1.1 · Pricing parcelado · Stack</div>
+            <div class="fc-kicker">Teste 1.1 · Parcelamento · Stack</div>
             <h2 class="fc-title">Pricing parcelado: o viés instrumental vende?</h2>
             <span class="fc-status is-confirmed">✓ Hipótese confirmada</span>
           </div>
@@ -861,11 +833,11 @@ html.is-locked .login-gate{display:flex;}
   <div class="test-fold">
     <div class="fold-card">
       <div class="fc-hero hd-c2">
-        <div class="fc-top"><span class="fc-pill">Tese 2 · Posição</span><span class="fc-pill is-ghost">Teste inicial · reteste 2.1 em 19/10</span></div>
+        <div class="fc-top"><span class="fc-pill">Tese 2 · Posição</span><span class="fc-pill is-ghost">Teste 2.0 · reteste 2.1 em 19/10</span></div>
         <div class="fc-main">
-          <div class="fc-num">02</div>
+          <div class="fc-num">2.0</div>
           <div class="fc-text">
-            <div class="fc-kicker">Teste 02 · A/B Brand Message · Stack</div>
+            <div class="fc-kicker">Teste 2.0 · Brand Message (IS) · Stack</div>
             <h2 class="fc-title">Brand Message: comunidade ou curso?</h2>
             <span class="fc-status is-inconclusive">◐ Inconclusivo</span>
           </div>
@@ -948,11 +920,11 @@ html.is-locked .login-gate{display:flex;}
   <div class="test-fold">
     <div class="fold-card is-planned">
       <div class="fc-hero hd-c2">
-        <div class="fc-top"><span class="fc-pill">Tese 2 · Posição</span><span class="fc-pill is-ghost">Reteste do Teste 02 · 2 de 2</span></div>
+        <div class="fc-top"><span class="fc-pill">Tese 2 · Posição</span><span class="fc-pill is-ghost">Reteste do Teste 2.0 · 2 de 2</span></div>
         <div class="fc-main">
           <div class="fc-num">2.1</div>
           <div class="fc-text">
-            <div class="fc-kicker">Teste 2.1 · Posição · Stack</div>
+            <div class="fc-kicker">Teste 2.1 · Brand Message (Paid Media) · Stack</div>
             <h2 class="fc-title">Posição: comunidade funciona em escala?</h2>
             <span class="fc-status is-planned">⏳ Em preparação · 19/10 a 29/10</span>
           </div>
@@ -980,7 +952,7 @@ html.is-locked .login-gate{display:flex;}
 
       <div class="fold-learn">
         <div class="learn-lbl">💡 O que vamos descobrir</div>
-        <p>Com volume maior, a posição de comunidade se sustenta? É a dúvida que o Teste 02 deixou aberta.</p>
+        <p>Com volume maior, a posição de comunidade se sustenta? É a dúvida que o Teste 2.0 deixou aberta.</p>
       </div>
     </div>
   </div>
@@ -995,7 +967,7 @@ html.is-locked .login-gate{display:flex;}
     <h1 style="font-size:clamp(30px,4.2vw,48px); font-weight:900; color:#fff; letter-spacing:-.02em; margin-bottom:36px;">Próximos passos sugeridos</h1>
 
     <div>
-      <h3 style="font-family:'Roboto',sans-serif; font-weight:800; font-size:clamp(18px,2vw,22px); color:#fff; margin-bottom:8px;">(19/10 a 29/10) Teste de Posição (2.1)</h3>
+      <h3 style="font-family:'Roboto',sans-serif; font-weight:800; font-size:clamp(18px,2vw,22px); color:#fff; margin-bottom:8px;">(19/10 a 29/10) Teste 2.1 - Brand Message (Paid Media)</h3>
       <p style="font-size:15px; color:rgba(255,255,255,.8); max-width:760px; line-height:1.55; margin-bottom:18px;">Aplicar novamente o teste realizado por IS mas em um público maior, via paid media, para verificar se a posição de comunidade é realmente pouco efetiva.</p>
       <div class="mini-box-grid" style="grid-template-columns:repeat(2,1fr); margin-top:0;">
         <div class="mini-box">
@@ -1010,7 +982,7 @@ html.is-locked .login-gate{display:flex;}
     </div>
 
     <div style="margin-top:32px;">
-      <h3 style="font-family:'Roboto',sans-serif; font-weight:800; font-size:clamp(18px,2vw,22px); color:#fff; margin-bottom:8px;">(data a definir) Investigação Quali em IS</h3>
+      <h3 style="font-family:'Roboto',sans-serif; font-weight:800; font-size:clamp(18px,2vw,22px); color:#fff; margin-bottom:8px;">(data a definir) Teste 3.0 - Investigação Quali</h3>
       <p style="font-size:15px; color:rgba(255,255,255,.8); max-width:760px; line-height:1.55;">Investigação Quali em IS para determinar os motivos de compra e não-compra. Continuidade da investigação iniciada por IS e Marketing sobre os motivos de compra da Stack.</p>
     </div>
   </div>
