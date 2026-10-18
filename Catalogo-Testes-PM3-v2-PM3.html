@@ -603,7 +603,7 @@ html.is-locked .login-gate{display:flex;}
 
 <script>
 (function(){
-  var STORAGE_KEY = 'pm3CatalogV2PM3EditsV1';
+  var STORAGE_KEY = 'pm3CatalogV2PM3EditsV2';
   var LEAF_TAGS = ['H1','H2','H3','H4','P','TD','TH','LI','B','STRONG','SPAN'];
 
   document.querySelectorAll('.section').forEach(function(sec, i){
@@ -659,10 +659,15 @@ html.is-locked .login-gate{display:flex;}
     return node;
   }
   function loadEdits(){ try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e){ return {}; } }
-  function saveEdit(key, html){
+  // An edit is stored with the original markup it replaced ("o"). On load it is
+  // only re-applied if the element still holds that original, so edits made
+  // before the page changed can never land on a different element.
+  function saveEdit(key, html, orig){
     try {
       var all = loadEdits();
-      all[key] = html;
+      var prev = all[key];
+      var base = (prev && typeof prev === 'object' && prev.h === orig) ? prev.o : orig;
+      if (html === base) delete all[key]; else all[key] = {h: html, o: base};
       localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
     } catch(e){}
   }
@@ -688,17 +693,13 @@ html.is-locked .login-gate{display:flex;}
   }
   function restoreEdits(){
     var all = loadEdits();
-    var changed = false;
     Object.keys(all).forEach(function(key){
-      if (isEffectivelyEmpty(all[key])) return;
-      var clean = sanitizeEditHtml(all[key]);
-      if (clean !== all[key]){ all[key] = clean; changed = true; }
+      var entry = all[key];
+      if (!entry || typeof entry !== 'object' || isEffectivelyEmpty(entry.h)) return;
       var el = resolveKey(key);
-      if (el) el.innerHTML = clean;
+      if (!el || el.innerHTML !== entry.o) return;
+      el.innerHTML = sanitizeEditHtml(entry.h);
     });
-    if (changed){
-      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(all)); } catch(e){}
-    }
   }
   function selectAllText(el){
     var range = document.createRange();
@@ -708,6 +709,7 @@ html.is-locked .login-gate{display:flex;}
     sel.addRange(range);
   }
   function startEdit(el){
+    el.__orig = el.innerHTML;
     el.setAttribute('contenteditable', 'true');
     el.spellcheck = false;
     el.focus();
@@ -719,7 +721,7 @@ html.is-locked .login-gate{display:flex;}
       el.removeEventListener('drop', onDrop);
       el.removeEventListener('dragover', onDrop);
       el.removeEventListener('paste', onPaste);
-      saveEdit(getKey(el), el.innerHTML);
+      saveEdit(getKey(el), el.innerHTML, el.__orig);
     }
     function onKey(ev){
       if (ev.key === 'Escape'){ ev.preventDefault(); el.blur(); }
@@ -750,7 +752,7 @@ html.is-locked .login-gate{display:flex;}
       stray.blur();
       if (stray.hasAttribute('contenteditable')){
         stray.removeAttribute('contenteditable');
-        saveEdit(getKey(stray), stray.innerHTML);
+        saveEdit(getKey(stray), stray.innerHTML, stray.__orig);
       }
     }
   });
