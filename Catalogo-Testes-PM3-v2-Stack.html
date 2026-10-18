@@ -279,11 +279,12 @@ img{max-width:100%; display:block;}
 .j-node.is-next .j-dot{background:var(--white); color:#8A8496; border:3px dashed var(--gray-fog); box-shadow:none;}
 .j-text{display:flex; flex-direction:column; align-items:center; gap:4px;}
 .j-cycle{font-size:10.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#8A8496; margin-top:6px;}
-.j-name{font-family:'Roboto Condensed',sans-serif; font-weight:800; font-size:16px; color:var(--ink); line-height:1.15;}
+.j-num{font-family:'Roboto Condensed',sans-serif; font-weight:900; font-size:17px; color:var(--ink); line-height:1.1;}
+.j-name{font-family:'Roboto Condensed',sans-serif; font-weight:700; font-size:14px; color:#3E384C; line-height:1.2;}
 .j-date{font-size:11.5px; color:#8A8496;}
 .j-learn{font-size:12.5px; color:#3E384C; line-height:1.4; margin-top:4px;}
-.j-node.is-next .j-name,.j-node.is-next .j-learn{color:#6B647A;}
-a.j-node:hover .j-name{text-decoration:underline;}
+.j-node.is-next .j-num,.j-node.is-next .j-name,.j-node.is-next .j-learn{color:#6B647A;}
+a.j-node:hover .j-num{text-decoration:underline;}
 
 .j-know{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
 .j-box{border-radius:var(--radius); padding:20px 22px; border:1px solid var(--card-border); background:var(--white);}
@@ -534,27 +535,27 @@ html.is-locked .login-gate{display:flex;}
 
     <div class="j-groups"><div class="j-group">Tese 1 · O preço é a barreira?</div><div class="j-group">Tese 2 · Comunidade como posição</div></div>
     <div class="j-nodes">
-      <a class="j-node is-refuted" href="#teste01"><span class="j-dot">✕</span><span class="j-text"><span class="j-cycle">Tese 1</span><span class="j-name">Teste 1.0 - Pricing</span><span class="j-date">14 a 24/08</span><span class="j-learn">Preço não é a barreira de compra</span></span></a>
-      <a class="j-node is-confirmed" href="#teste01-1"><span class="j-dot">✓</span><span class="j-text"><span class="j-cycle">Tese 1</span><span class="j-name">Teste 1.1 - Parcelamento</span><span class="j-date">05 a 15/10</span><span class="j-learn">Viés instrumental não vende, e o anúncio já se pagou</span></span></a>
-      <a class="j-node is-inconclusive" href="#teste02"><span class="j-dot">◐</span><span class="j-text"><span class="j-cycle">Tese 2</span><span class="j-name">Teste 2.0 - Brand Message (IS)</span><span class="j-date">01 a 10/09</span><span class="j-learn">Precisa de mais volume para validar</span></span></a>
-      <a class="j-node is-next" href="#teste02-1"><span class="j-dot">→</span><span class="j-text"><span class="j-cycle">Tese 2</span><span class="j-name">Teste 2.1 - Brand Message (Paid Media)</span><span class="j-date">19 a 29/10</span><span class="j-learn">Comunidade funciona em escala?</span></span></a>
-      <a class="j-node is-next" href="#proximos-passos"><span class="j-dot">…</span><span class="j-text"><span class="j-name">Teste 3.0 - Investigação Quali</span><span class="j-date">data a definir</span><span class="j-learn">Por que compram, ou não compram, a Stack?</span></span></a>
+      <a class="j-node is-confirmed" href="#teste01"><span class="j-dot">✓</span><span class="j-text"><span class="j-cycle">Tese 1</span><span class="j-num">Teste 1.0</span><span class="j-name">Pricing</span><span class="j-date">14 a 24/08</span><span class="j-learn">O preço não é a barreira: mesmo com 50% off, não houve interesse de compra.</span></span></a>
+      <a class="j-node is-confirmed" href="#teste01-1"><span class="j-dot">✓</span><span class="j-text"><span class="j-cycle">Tese 1</span><span class="j-num">Teste 1.1</span><span class="j-name">Parcelamento</span><span class="j-date">05 a 15/10</span><span class="j-learn">Mesmo parcelado, o viés instrumental não despertou interesse de compra.</span></span></a>
+      <a class="j-node is-inconclusive" href="#teste02"><span class="j-dot">◐</span><span class="j-text"><span class="j-cycle">Tese 2</span><span class="j-num">Teste 2.0</span><span class="j-name">Brand Message (IS)</span><span class="j-date">01 a 10/09</span><span class="j-learn">O teste com 40 pessoas não resultou em respostas suficientes para validação.</span></span></a>
+      <a class="j-node is-next" href="#teste02-1"><span class="j-dot">→</span><span class="j-text"><span class="j-cycle">Tese 2</span><span class="j-num">Teste 2.1</span><span class="j-name">Brand Message (Paid Media)</span><span class="j-date">19 a 29/10</span><span class="j-learn">As mensagens de Comunidade ou Carreira em IA despertam interesse de compra?</span></span></a>
+      <a class="j-node is-next" href="#proximos-passos"><span class="j-dot">…</span><span class="j-text"><span class="j-num">Teste 3.0</span><span class="j-name">Investigação Quali</span><span class="j-date">data a definir</span><span class="j-learn">Por que compraria um curso da Stack?</span></span></a>
     </div>
 
     <div class="j-know">
       <div class="j-box is-known">
         <h4>O que já sabemos</h4>
         <ul>
-          <li>O preço não é a barreira: 0 vendas mesmo com 50% de desconto (Teste 1.0).</li>
-          <li>A mensagem instrumental não vende curso da Stack, nem parcelado (Teste 1.1).</li>
+          <li>O preço não é a barreira: mesmo com 50% off, não houve interesse de compra (Teste 1.0).</li>
+          <li>Mesmo parcelado, o viés instrumental não despertou interesse de compra (Teste 1.1).</li>
           <li>O público compra: o anúncio do Teste 1.1 já se pagou, com PCamp e PM3 Sprints.</li>
         </ul>
       </div>
       <div class="j-box is-open">
         <h4>O que vamos descobrir</h4>
         <ul>
-          <li>Comunidade é uma posição efetiva em escala? (Teste 2.1 · 19/10 a 29/10)</li>
-          <li>Por que compram, ou não compram, a Stack? (Investigação Quali em IS)</li>
+          <li>As mensagens de Comunidade ou Carreira em IA despertam interesse de compra? (Teste 2.1 · 19/10 a 29/10)</li>
+          <li>Por que compraria um curso da Stack? (Teste 3.0 · Investigação Quali)</li>
         </ul>
       </div>
     </div>
